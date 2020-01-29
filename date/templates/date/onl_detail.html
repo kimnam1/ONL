@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{object.month}}월 {{object.date}}일
+{% endblock %}
+
+{% block content %}
+    <h5>{{ object.yesterday_month }}월 {{ object.yesterday_date }}일  </h5>
+    <h2>{{ object.month }}월 {{ object.date }}일</h2>
+    <h5>{{ object.tomorrow_month }}월 {{ object.tomorrow_date }}일 </h5>
+    <br>
+    <li>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </li>
+{% endblock %}

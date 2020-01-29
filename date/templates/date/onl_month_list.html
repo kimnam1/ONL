@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    {{ object_list.reverse }}
+{% endblock %}
+
+{% block content %}
+    {% for onl in object_list %}
+        {% if onl.month == 1 %}
+            {{ onl.date_with_dlf|linebreaks }}
+        {% endif %}
+    {% endfor %}
+
+    {{ object }}
+
+{% endblock %}
