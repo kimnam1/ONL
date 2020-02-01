@@ -6,7 +6,6 @@ wiki = wikipediaapi.Wikipedia('ko') # 한국 위키피디아 사이트로 접속
 
 
 
-
 month = list(range(1, 13))
 date = list(range(1, 32))
 for mon in month:

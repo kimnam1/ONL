@@ -2,16 +2,21 @@
 
 
 {% block title %}
-    {{ object_list.reverse }}
+
 {% endblock %}
 
 {% block content %}
-    {% for onl in object_list %}
-        {% if onl.month == 1 %}
-            {{ onl.date_with_dlf|linebreaks }}
+    <h1>{{ request.path|cut:'/' }}월</h1>
+
+    {% for onl in onl_list %}
+        {% if onl.month_in_string == request.path|cut:'/'  %}
+            <a href="{% url 'OnlDV' onl.month onl.slug %}">
+            {{ onl.date_with_dlf|linebreaks }}</a>
+
         {% endif %}
     {% endfor %}
 
-    {{ object }}
+
+
 
 {% endblock %}

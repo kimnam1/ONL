@@ -1,5 +1,7 @@
 from django.db import models
+from django.shortcuts import resolve_url
 from django.urls import reverse
+
 
 
 class Onl(models.Model):
@@ -19,6 +21,12 @@ class Onl(models.Model):
 
     def date_with_dlf(self):
         return str(self.date) + "일"
+
+    def month_in_string(self):
+        return str(self.month)
+
+    def get_absolute_url(self):
+        return resolve_url('OnlDV',)
 
     def yesterday_month(self):
         if self.date == 1:
@@ -62,6 +70,7 @@ class Onl(models.Model):
             return 1
         else:
             return self.date + 1
+
 
 
 
