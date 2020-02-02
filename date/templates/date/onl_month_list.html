@@ -2,21 +2,50 @@
 
 
 {% block title %}
-
+    {{ request.path|cut:'/' }}월
 {% endblock %}
 
 {% block content %}
-    <h1>{{ request.path|cut:'/' }}월</h1>
+    <h1>{{ request.path|cut:'/' }}월</h1><br>
+    {# TODO:표만들기 #}
+    <script type="text/javascript">
+        document.write("<table class='table'>");
+        var list = [];
+        {% for onl in onl_list %}
+            {% if onl.month_in_string == request.path|cut:'/' %}
+                list.push(onl);
+            {% endif %}
+        {% endfor %}
+        for (var i=0; i<5; i++){
+            for (var j=0; j<7; j++){
+                document.write("<tr>"); // 행추가
+                document.write(list[(i*7)+j]);
+                document.write("</tr>"); // 행추가닫기
+            }
+        }
+    </script>
 
-    {% for onl in onl_list %}
-        {% if onl.month_in_string == request.path|cut:'/'  %}
-            <a href="{% url 'OnlDV' onl.month onl.slug %}">
-            {{ onl.date_with_dlf|linebreaks }}</a>
 
-        {% endif %}
-    {% endfor %}
+    <table class="table">
+        {% for onl in onl_list %}
+            {% if onl.month_in_string == request.path|cut:'/' %}
+                <tr>
+                    <a href="{% url 'OnlDV' onl.slug %}">
+                    {{ onl.day_with_dlf }}</a><br><br>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
 
 
+
+
+
+
+
+{% endblock %}
+
+{% block extra-script %}
 
 
 {% endblock %}

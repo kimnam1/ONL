@@ -10,7 +10,7 @@ class EventInLine(admin.TabularInline):
 @admin.register(Onl)
 class OnlAdmin(admin.ModelAdmin):
     list_display = ("title",)
-    list_filter = ('month', 'date',)
-    search_fields = ("month", 'date',)
-    prepopulated_fields = {'slug': ('month', 'date',)}
+    list_filter = ('month', 'day',)
+    search_fields = ("month", 'day',)
+    prepopulated_fields = {'slug': ('month', 'day',)}
 

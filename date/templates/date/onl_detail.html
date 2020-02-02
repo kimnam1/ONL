@@ -1,13 +1,63 @@
 {% extends "base.html" %}
 
 {% block title %}
-    {{object.month}}월 {{object.date}}일
+    {{object.month}}월 {{object.day}}일
+{% endblock %}
+
+{% block extra-style %}
+
 {% endblock %}
 
 {% block content %}
-    <h5>{{ object.yesterday_month }}월 {{ object.yesterday_date }}일</h5>
-    <h2>{{ object.month }}월 {{ object.date }}일</h2>
-    <h5>{{ object.tomorrow_month }}월 {{ object.tomorrow_date }}일 </h5>
+
     <br>
-    {{ object.events|linebreaksbr }}
+    <div class="container d-flex">
+        <div class="leftcontainer flex-fill align-self-center">
+            <a href="{% url 'OnlDV' object.yesterday_slug %}">
+                <h5><ion-icon name="arrow-dropleft"></ion-icon>{{ object.yesterday.month }}월 {{ object.yesterday.day }}일</h5>
+            </a>
+        </div>
+
+        <div class="middlecontainer flex-fill align-self-center">
+            <h2>{{ object.month }}월 {{ object.day }}일</h2>
+        </div>
+
+        <div class="rightcontainer flex-fill align-self-center">
+            <a href="{% url 'OnlDV' object.tomorrow_slug %}">
+                <h5>{{ object.tomorrow.month }}월 {{ object.tomorrow.day }}일 <ion-icon name="arrow-dropright"></ion-icon></h5>
+            </a>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <div class="contentcontainer position-relative mx-2">
+        {{ object.events|linebreaksbr }}
+        <br>
+        <br>
+
+    </div>
+    {# TODO:사진 크롤링 #}
+
+{% endblock %}
+
+{% block extra-footer %}
+    <br>
+    <div class="container d-flex fixed-bottom">
+        <div class="leftcontainer flex-fill align-self-center">
+            <a href="{% url 'OnlDV' object.yesterday_slug %}">
+                <h5><ion-icon name="arrow-dropleft"></ion-icon>{{ object.yesterday.month }}월 {{ object.yesterday.day }}일</h5>
+            </a>
+        </div>
+
+        <div class="middlecontainer flex-fill align-self-center">
+            <h2>{{ object.month }}월 {{ object.day }}일</h2>
+        </div>
+
+        <div class="rightcontainer flex-fill align-self-center">
+            <a href="{% url 'OnlDV' object.tomorrow_slug %}">
+                <h5>{{ object.tomorrow.month }}월 {{ object.tomorrow.day }}일 <ion-icon name="arrow-dropright"></ion-icon></h5>
+            </a>
+        </div>
+    </div>
 {% endblock %}
