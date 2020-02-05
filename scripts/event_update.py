@@ -1,4 +1,5 @@
 import wikipediaapi
+import datetime
 
 from date.models import Onl
 
@@ -22,7 +23,7 @@ for mon in month:
                     print()
                     print()
                     print()
-                    Onl(month=mon, date=d, slug=f'{mon}-{d}', events=page_wiki.text).save()
+                    Onl(month=mon, day=d, events=page_wiki.text).save()
                 if page_wiki.exists() == False:
                     print(f'{mon}월 {d}일 wiki에 존재 안함!!!!!!!!!!!!!!!!!!!!!')
                 print('30일까지인 달입니다.')
@@ -37,7 +38,7 @@ for mon in month:
                     print()
                     print()
                     print()
-                    Onl(month=mon, date=d, slug=f'{mon}-{d}', events=page_wiki.text).save()
+                    Onl(month=mon, day=d, events=page_wiki.text).save()
                 if page_wiki.exists() == False:
                     print(f'{mon}월 {d}일 wiki에 존재 안함!!!!!!!!!!!!!!!!!!!!!')
     if mon == 2:
@@ -52,7 +53,7 @@ for mon in month:
                     print()
                     print()
                     print()
-                    Onl(month=mon, date=d, slug=f'{mon}-{d}', events=page_wiki.text).save()
+                    Onl(month=mon, day=d, events=page_wiki.text).save()
                 if page_wiki.exists() == False:
                     print(f'{mon}월 {d}일 wiki에 존재 안함!!!!!!!!!!!!!!!!!!!!!')
                 break
@@ -66,7 +67,7 @@ for mon in month:
                     print()
                     print()
                     print()
-                    Onl(month=mon, date=d, slug=f'{mon}-{d}', events=page_wiki.text).save()
+                    Onl(month=mon, day=d, events=page_wiki.text).save()
                 if page_wiki.exists() == False:
                     print(f'{mon}월 {d}일 wiki에 존재 안함!!!!!!!!!!!!!!!!!!!!!')
     elif mon in [1, 3, 5, 7, 8, 10, 12]:
@@ -80,7 +81,7 @@ for mon in month:
                 print()
                 print()
                 print()
-                Onl(month=mon, date=d, slug=f'{mon}-{d}', events=page_wiki.text).save()
+                Onl(month=mon, day=d, events=page_wiki.text).save()
             if page_wiki.exists() == False:
                 print(f'{mon}월 {d}일 wiki에 존재 안함!!!!!!!!!!!!!!!!!!!!!')
             if d == 31:

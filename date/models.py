@@ -92,6 +92,7 @@ class Onl(models.Model):
 
     def save(self, *args, **kwargs):
         self.date = datetime.date(year=2020, month=self.month, day=self.day)
+        self.slug = f'{self.month}-{self.day}'
         super().save(*args, **kwargs)
 
 

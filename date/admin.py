@@ -12,5 +12,5 @@ class OnlAdmin(admin.ModelAdmin):
     list_display = ("title",)
     list_filter = ('month', 'day',)
     search_fields = ("month", 'day',)
-    prepopulated_fields = {'slug': ('month', 'day',)}
+    prepopulated_fields = {'slug': ('month', 'day',),}
 
