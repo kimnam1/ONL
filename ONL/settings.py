@@ -78,15 +78,15 @@ WSGI_APPLICATION = 'ONL.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'onl',
-        'USER': 'admin',
-        'PASSWORD': 'Rlaskadlf604',
-        'HOST': 'onl-1.cpi6t5rsckvc.us-east-2.rds.amazonaws.com',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': 'onl',
+        # 'USER': 'admin',
+        # 'PASSWORD': 'Rlaskadlf604',
+        # 'HOST': 'onl-1.cpi6t5rsckvc.us-east-2.rds.amazonaws.com',
+        # 'PORT': '3306',
+        # 'OPTIONS': {
+        #     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        # },
     }
 }
 
