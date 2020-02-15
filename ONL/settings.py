@@ -25,7 +25,7 @@ SECRET_KEY = 'o-(o)++g#hi9#a54a67u%(dr%1@skivo#o1_t1bes+8w0^##xy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'onl-1.ca4p3dls0g3j.ap-northeast-2.rds.amazonaws.com', '218.159.197.133',]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '218.159.197.133', '*']
 
 
 # Application definition
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'ONL.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': 'onl',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         # 'USER': 'admin',
         # 'PASSWORD': 'Rlaskadlf604',
         # 'HOST': 'onl-1.cpi6t5rsckvc.us-east-2.rds.amazonaws.com',
